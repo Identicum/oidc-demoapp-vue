@@ -7,6 +7,8 @@ Support:
 * Token Negotiation
 * OAuth API Call
 
+In order to test the API call, you can use our Git Hub [OAuth demo API](https://github.com/Identicum/oauth-demoapi-spring).
+
 # Installation
 
 Clone this repository

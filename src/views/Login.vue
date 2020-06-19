@@ -5,7 +5,7 @@
           color="amber"
           dark
         >
-        <v-toolbar-title><span class="title ml-3 mr-5">Store&nbsp;<span class="font-weight-light">Dashboard</span></span></v-toolbar-title>
+        <v-toolbar-title><span class="title ml-3 mr-5">Store&nbsp;<span class="font-weight-light">Online</span></span></v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn text v-on:click="signIn"> 
             <v-icon>mdi-login</v-icon>

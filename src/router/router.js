@@ -34,8 +34,7 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
-  if (requiresAuth) 
-  { 
+  if (requiresAuth) { 
     store.dispatch("auth/checkAccess", requiresAuth).then((statusCode) => {
         if(statusCode == "OK") {
           next();

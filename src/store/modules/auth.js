@@ -1,7 +1,10 @@
 import { getOidcClient } from '@/oidc/oidc-client'
 import router from '@/router/router'
 
-// Maneja de proceso de login OpenID Connect utilizando la library oidc-client-js (@see: https://github.com/IdentityModel/oidc-client-js)
+/**
+ * OpenID Connect flow using oidc-client-js library(@see: https://github.com/IdentityModel/oidc-client-js)
+ * @author Martin Besozzi <mbesozzi@identicum.com>
+ */
 
 const defaultState = {
     user: {},
@@ -27,11 +30,10 @@ const actions = {
             })
     },
     setAuthenticationSuccess: (context, user) => {
-        // Verifico si la app esta subscripta a los eventos generados por la library OIDC
+        // Check if library is suscribed to OIDC library events
         if(!context.state.isOidcEventsHandled) {
-            // Me subscribo al evento de token expired para poder tomar acción
             oidcClient.events.addAccessTokenExpired(() => {
-                // TODO: Validar acción a tomar ante la expiración del token
+                // TODO: Handliing token expiration
             });
             context.commit('OIDC_LIBRARY_EVENTS_HANDLED');
         }
@@ -51,7 +53,7 @@ const actions = {
         return new Promise(resolve => { 
                 oidcClient = getOidcClient();
                 if(!requiresAuth) return resolve("OK")
-                // Verifico si tengo almacenado en el Session Storage los tokens
+                // Check if we have a token in Session Storage 
                 const getUserPromise = new Promise(resolve => {
                     oidcClient.getUser().then(user => {
                         resolve(user)
@@ -61,7 +63,7 @@ const actions = {
                 })
                 let statusCode = "UNAUTHORIZED";
                 getUserPromise.then(user => {
-                    // Si tengo información del usuario y el token no se encuentra expirado
+                    // Check if we have token information and if token is not expired
                     if(user && !user.expired) {
                         statusCode = "OK";
                         context.dispatch("setAuthenticationSuccess", user);
@@ -77,8 +79,8 @@ const mutations = {
     TOKEN_REQUEST_PENDING : (state) => {
         state.user = { loading : true };
     },
-    TOKEN_REQUEST_SUCCESS : () => {
-        // state.user = { token : tokenRequest };
+    TOKEN_REQUEST_SUCCESS : (state) => {
+        state.user = { loading : false }
     },
     TOKEN_REQUEST_FAILURE : (state, error) => {
         state.user =  { error };

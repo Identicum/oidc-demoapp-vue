@@ -23,8 +23,9 @@ npm run serve
 ```
 You can access to the UI on http://hostname:8080/
 
-3. Change configuration
-Go to the section Setting page to change the app configuration
+3. Change configuration:
+
+Go to the app section Settings and change the configuration
 
 
 

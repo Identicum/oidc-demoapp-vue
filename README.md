@@ -17,7 +17,7 @@ git clone git@github.com:https://github.com/Identicum/oidc-demoapp-vue.git
 ```
 
 # Configure and run
-1. Adjust the oidc client parameters in the file oidc-client.js
+1. Adjust the oidc client parameters in the file [oidc-client.js](src/oidc/oidc-client.js)
 
 2. Compile & run:
 ```

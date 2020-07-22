@@ -1,37 +1,43 @@
 # oidc-demoapp-vue
-OpenID Connect (OIDC) demo app vue using using library [oidc-client](https://github.com/IdentityModel/oidc-client-js).
+OpenID Connect (OIDC) VueJS demo application using using library: [oidc-client](https://github.com/IdentityModel/oidc-client-js).
 Authentication flow data is handled by Vuex.
 
 Support:
-* OpenID Connect Authentication (Flow Authorization Code with PCKE)
+* OpenID Connect Authentication (Authorization Code flow with PCKE)
 * Token Negotiation
 * OAuth API Call
 
-In order to test the API call, you can use our Git Hub [OAuth demo API](https://github.com/Identicum/oauth-demoapi-spring).
+In order to test the API call, you can use our [OAuth demo API](https://github.com/Identicum/oauth-demoapi-spring).
 
-# Installation
+## Installation
 
-Clone this repository
+### Clone repository
 ```
 git clone git@github.com:https://github.com/Identicum/oidc-demoapp-vue.git
 ```
 
-# Configure and run
-1. Adjust the oidc client parameters in the file [oidc-client.js](src/oidc/oidc-client.js)
+### Configuration file
 
-2. Compile & run:
+Adjust the oidc client parameters in the file [oidc-client.js](src/oidc/oidc-client.js)
+
+### Run
+
+#### Run locally
 ```
 npm run serve
 ```
 You can access to the UI on http://hostname:8080/
 
-3. Change configuration:
+#### Run as Docker
+```
+docker build -t identicum/oidc-demoapp-vue .
+docker run -d --name oidc-demoapp-vue -p xxxx:80 identicum/oidc-demoapp-vue
+```
 
-Go to the app section Settings and change the configuration
+### App configuration:
+Go to the Settings section in the app and change the configuration
 
-
-
-# Screenshots
+## Screenshots
 
 ![App login](src/assets/screenshot-login.png)
 

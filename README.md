@@ -1,5 +1,5 @@
 # oidc-demoapp-vue
-OpenID Connect (OIDC) VueJS demo application using using library: [oidc-client](https://github.com/IdentityModel/oidc-client-js).
+OpenID Connect (OIDC) VueJS demo application using [oidc-client](https://github.com/IdentityModel/oidc-client-js) library.
 Authentication flow data is handled by Vuex.
 
 Supports:

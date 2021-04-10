@@ -18,7 +18,8 @@ git clone git@github.com:https://github.com/Identicum/oidc-demoapp-vue.git
 
 ### Configuration file
 
-Adjust the oidc client parameters in the file [oidc-client.js](src/oidc/oidc-client.js)
+- Adjust the oidc client parameters in [oidc-client.js](src/oidc/oidc-client.js)
+- Adjust the API endpoint URL in [Home.vue.js](src/views/Home.vue)
 
 ### Run
 

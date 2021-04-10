@@ -186,7 +186,7 @@ export default {
     results: null,
     content : "products", // Default page
     api : {
-      url : 'http://localhost:8081/api/v1/products',
+      url : '$VUE_APP_API_URL',
       loading : false
     },
     drawer: null

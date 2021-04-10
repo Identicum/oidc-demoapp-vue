@@ -31,7 +31,7 @@ You can access to the UI on http://hostname:8080/
 #### Run as Docker
 ```
 docker build -t identicum/oidc-demoapp-vue .
-docker run -d --name oidc-demoapp-vue -p xxxx:80 identicum/oidc-demoapp-vue
+docker run -d --name oidc-demoapp-vue -p xxxx:80 -e VUE_APP_OIDC_PROVIDER_DOMAIN=https://idp.domain.com -e VUE_APP_CLIENT_ID=my_client_id -e VUE_APP_API_URL=http://localhost:8081/api/v1/products identicum/oidc-demoapp-vue
 ```
 
 ### App configuration:

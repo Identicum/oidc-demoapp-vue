@@ -4,8 +4,8 @@ Oidc.Log.logger = console;
 Oidc.Log.level = (process.env.NODE_ENV === 'production') ? Oidc.Log.ERROR : Oidc.Log.DEBUG;
 
 // OIDC configuration
-let oidcProviderDomain = 'https://idp.domain.com';
-let clientId = "my_client_id";
+let oidcProviderDomain = '$VUE_APP_OIDC_PROVIDER_DOMAIN';
+let clientId = '$VUE_APP_CLIENT_ID';
 let scopes = "openid profile api.identicum.com/product:write api.identicum.com/product:read"
 
 let instance;

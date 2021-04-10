@@ -15,5 +15,8 @@ LABEL build_date=$BUILD_DATE
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 
+COPY ./entrypoint.sh /docker-entrypoint.d/entrypoint.sh
+RUN chmod +x /docker-entrypoint.d/entrypoint.sh
+
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

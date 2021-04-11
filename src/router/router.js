@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import store from '@/store';
+import { default as Home } from '@/views/Home.vue'
 
 Vue.use(VueRouter);
 
@@ -18,7 +19,7 @@ const router = new VueRouter({
     {
       path: '/home',
       name: 'Home',
-      component:  () => import('@/views/Home'),
+      component: Home,
       meta: {
         requiresAuth: true,
       }
